@@ -1,0 +1,29 @@
+<monitor>
+  <name>EndecaMDEXMonitor</name>
+  <type>managed</type>
+  <description>Monitor Endeca MDEX Stats</description>
+  <monitor-configuration>
+  </monitor-configuration>
+  <monitor-run-task>
+    <type>java</type>
+    <name>EndecaMDEX Run Task</name>
+    <display-name>EndcecaMDEXMonitor Task</display-name>
+    <description>EndcecaMDEXMonitor Task</description>
+    <execution-style>periodic</execution-style>
+    <execution-frequency-in-seconds>180</execution-frequency-in-seconds>
+    <execution-timeout-in-secs>240</execution-timeout-in-secs>
+        <task-arguments>
+        <argument name="config-file" is-required="true" default-value="monitors/EndecaMonitor/config.yml"/>
+            <!--<argument name="url" is-required="true" default-value="http://localhost:4001/admin.xml?op=stats"/> -->
+           <!-- 
+            <argument name="cache_stats_metrics" is-required="false" default-value="entry_count,hit_pct,miss_pct"/>
+            <argument name="server_stats_metrics" is-required="false" default-value="avg,max,min,total,n,stddev"/>
+            <argument name="result_page_stats_metrics" is-required="false" default-value="avg,max,min,total,n,stddev"/>
+            -->
+        </task-arguments>
+        <java-task>
+            <classpath>endeca-monitoring-extension.jar</classpath>
+            <impl-class>com.appdynamics.extensions.EndecaMonitor</impl-class>
+        </java-task>
+    </monitor-run-task>
+</monitor>

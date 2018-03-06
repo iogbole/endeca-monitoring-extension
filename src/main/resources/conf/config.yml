@@ -1,0 +1,13 @@
+--- 
+mdexMetrics: 
+  cacheMetrics: "*"
+  resultPageMetrics: "*"
+  serverMetrics: "*"
+server: 
+  host: "http://localhost"
+  port: 4104
+  uri: "/admin?op=stats"
+  password: ""
+  username: ""
+metricPrefix: "Server|Component:<tier_ID>|Custom Metrics|EndecaMDEXStats|<ServerUniqueHostId>|"
+
